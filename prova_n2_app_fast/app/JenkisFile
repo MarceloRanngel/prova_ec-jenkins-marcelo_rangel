@@ -5,7 +5,7 @@ pipeline{
     }
     stages{
         stage("Criando wrapper para o gradle"){
-            dir(%AppPath%){
+            dir($AppPath){
                 sh gradle wrapper
             }
 
