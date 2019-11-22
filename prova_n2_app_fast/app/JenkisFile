@@ -1,7 +1,7 @@
 pipeline{
     agent any
     environment{
-        $AppPath = "$WORKSPACE/prova_n2_app_fast/app/"
+        AppPath = "$WORKSPACE/prova_n2_app_fast/app/"
     }
     stages{
         stage("Criando wrapper para o gradle"){
