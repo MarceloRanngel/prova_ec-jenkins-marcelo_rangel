@@ -1,0 +1,23 @@
+pipeline{
+    agent any
+    environment{
+        $WORKSPACE/prova_ec-jenkins-marcelo_rangel/prova_n2_app_fast
+    }
+    stages{
+        stage("Criando wrapper para o gradle"){
+            dir(%WORKSPACE%){
+                sh gradle wrapper
+            }
+        }
+ /*       stage("Testes de unit"){
+
+        }
+        stage("build do apk"){
+
+        }
+        stage("Arquivar o apk para o build atual com figerprint"){
+
+        }
+*/
+    }
+}
