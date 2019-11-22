@@ -1,15 +1,16 @@
 pipeline{
     agent any
     environment{
-        $WORKSPACE/prova_ec-jenkins-marcelo_rangel/prova_n2_app_fast
+        %AppPath% = "$WORKSPACE/prova_n2_app_fast/app/"
     }
     stages{
         stage("Criando wrapper para o gradle"){
-            dir($WORKSPACE){
+            dir(%AppPath%){
                 sh gradle wrapper
             }
+
         }
- /*       stage("Testes de unit"){
+       stage("Testes de unit"){
 
         }
         stage("build do apk"){
@@ -18,6 +19,6 @@ pipeline{
         stage("Arquivar o apk para o build atual com figerprint"){
 
         }
-*/
+
     }
 }
